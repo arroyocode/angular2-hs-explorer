@@ -1,3 +1,9 @@
 node_modules/
+src/**/*.js
+wwwroot/**/*.js
+wwwroot/**/*.js.map
+wwwroot/**/*.css
+wwwroot/*.html
 typings/
+wwwroot/client-dependencies
 .idea*
