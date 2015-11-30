@@ -1,0 +1,11 @@
+{
+  "modulesRootPath": "node_modules",
+  "dependencies": [
+    "systemjs/dist/system.src.js",
+    "angular2/bundles/angular2.dev.js",
+    "angular2/bundles/router.dev.js",
+    "angular2/bundles/http.dev.js"
+  ],
+  "remoteDependenciesRootPath": "remote_dependencies",
+  "remoteDependencies": [ ]
+}
