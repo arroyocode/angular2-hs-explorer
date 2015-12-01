@@ -1,0 +1,12 @@
+$base-color: #e6e6e6;
+$accent-color: darken($base-color, 20);
+$body-font: "Tahoma", sans-serif;
+
+body {
+    background: $base-color;
+    font-family: $body-font;
+}
+
+h1 {
+    color: $accent-color;
+}
