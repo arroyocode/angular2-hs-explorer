@@ -35,7 +35,9 @@ var options = {
             host: 'localhost',
             port: 3000,
             notify: true,
-            open: true
+            open: true,
+			reloadDebounce: 3000,
+			reloadOnRestart: true
         }
     }
 };
@@ -118,6 +120,8 @@ gulp.task('browser-sync', function() {
         port: options.server.browser.port,
         notify: options.server.browser.notify,
         open: options.server.browser.open,
+		reloadDebounce: options.server.browser.reloadDebounce,
+		reloadOnRestart: options.server.browser.reloadOnRestart,
         server: {
             baseDir: wwwRoot,
             injectChanges: true
@@ -145,7 +149,7 @@ gulp.task('watch-sass', function() {
         .pipe(changed(options.client.sass.files, { extension: '.css' }))
         .pipe(clip())
         .pipe(sourcemaps.init())
-        .pipe(tsc(project))
+        .pipe(sass())
         .pipe(gulp.dest(options.client.sass.outputPath))
         .pipe(reload({
             stream: true
