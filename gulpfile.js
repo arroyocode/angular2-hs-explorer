@@ -14,20 +14,20 @@ var getDirName = require('path').dirname;
 var syncRequest = require('sync-request');
 var tsc = require('gulp-typescript');
 
-var wwwRoot = 'dist/';
+var wwwRoot = 'wwwroot/';
 var options = {
     client: {
         dependenciesPath: wwwRoot + 'client-dependencies/',
         ts: {
-            files: 'src/typescript/**/*.ts',
+            files: ['src/app/components/**/*.ts', 'src/app/shared/*.ts', 'src/app/*.ts'],
             outputPath: wwwRoot + 'js/'
         },
         sass: {
-            files: 'src/sass/**/*.scss',
-            outputPath: wwwRoot + 'css'
+            files: ['src/assets/**/*.scss'],
+            outputPath: wwwRoot
         },
         html: {
-            files: 'src/**/*.html',
+            files: ['src/*.html'],
             outputPath: wwwRoot
         }
     },
@@ -36,7 +36,7 @@ var options = {
             host: 'localhost',
             port: 3000,
             notify: true,
-            open: true,
+            open: false,
 			reloadDebounce: 3000
         }
     }

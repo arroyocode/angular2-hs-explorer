@@ -1,5 +1,5 @@
 import {Component, View, bootstrap} from 'angular2/angular2';
-import {MashapeService} from './api/mashapeService';
+import {MashapeService} from './shared/mashapeService';
 
 @Component({
     selector: 'app'

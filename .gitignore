@@ -4,6 +4,5 @@ wwwroot/**/*.js
 wwwroot/**/*.js.map
 wwwroot/**/*.css
 wwwroot/*.html
-typings/
 wwwroot/client-dependencies
 .idea*
