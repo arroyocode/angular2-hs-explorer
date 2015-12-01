@@ -7,6 +7,7 @@ var seq = require('run-sequence');
 var changed = require('gulp-changed');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
+var uglify = require('gulp-uglify');
 var fs = require('fs');
 var mkdirp = require('mkdirp');
 var getDirName = require('path').dirname;
@@ -95,15 +96,14 @@ gulp.task('build-ts', function () {
         .pipe(clip())
         .pipe(sourcemaps.init())
         .pipe(tsc(project))
-        .pipe(sourcemaps.write('./', { sourceRoot: '/' }))
+		.pipe(uglify())
         .pipe(gulp.dest(options.client.ts.outputPath));
 });
 
 gulp.task('build-sass', function () {
     gulp.src(options.client.sass.files)
         .pipe(clip())
-        .pipe(sourcemaps.init())
-        .pipe(sass())
+        .pipe(sass({outputStyle: 'compressed'}))
         .pipe(gulp.dest(options.client.sass.outputPath));
 });
 
@@ -134,8 +134,8 @@ gulp.task('watch-ts', function() {
     gulp.src(options.client.ts.files)
         .pipe(changed(options.client.ts.files, { extension: '.js' }))
         .pipe(clip())
-        .pipe(sourcemaps.init())
         .pipe(tsc(project))
+		.pipe(uglify())
         .pipe(gulp.dest(options.client.ts.outputPath))
         .pipe(reload({
             stream: true
@@ -146,8 +146,7 @@ gulp.task('watch-sass', function() {
     gulp.src(options.client.sass.files)
         .pipe(changed(options.client.sass.files, { extension: '.css' }))
         .pipe(clip())
-        .pipe(sourcemaps.init())
-        .pipe(sass())
+        .pipe(sass({outputStyle: 'compressed'}))
         .pipe(gulp.dest(options.client.sass.outputPath))
         .pipe(reload({
             stream: true
