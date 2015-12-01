@@ -36,8 +36,7 @@ var options = {
             port: 3000,
             notify: true,
             open: true,
-			reloadDebounce: 3000,
-			reloadOnRestart: true
+			reloadDebounce: 3000
         }
     }
 };
@@ -121,7 +120,6 @@ gulp.task('browser-sync', function() {
         notify: options.server.browser.notify,
         open: options.server.browser.open,
 		reloadDebounce: options.server.browser.reloadDebounce,
-		reloadOnRestart: options.server.browser.reloadOnRestart,
         server: {
             baseDir: wwwRoot,
             injectChanges: true
