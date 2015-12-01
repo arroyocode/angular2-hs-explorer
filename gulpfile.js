@@ -34,7 +34,6 @@ var options = {
         browser: {
             host: 'localhost',
             port: 3000,
-            proxy: 'localhost:5000',
             notify: true,
             open: true
         }
@@ -117,9 +116,12 @@ gulp.task('browser-sync', function() {
     sync({
         host: options.server.browser.host,
         port: options.server.browser.port,
-        proxy: options.server.browser.proxy,
         notify: options.server.browser.notify,
-        open: options.server.browser.open
+        open: options.server.browser.open,
+        server: {
+            baseDir: wwwRoot,
+            injectChanges: true
+        }
     });
 });
 
