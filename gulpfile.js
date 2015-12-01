@@ -14,7 +14,7 @@ var getDirName = require('path').dirname;
 var syncRequest = require('sync-request');
 var tsc = require('gulp-typescript');
 
-var wwwRoot = 'wwwroot/';
+var wwwRoot = 'dist/';
 var options = {
     client: {
         dependenciesPath: wwwRoot + 'client-dependencies/',
