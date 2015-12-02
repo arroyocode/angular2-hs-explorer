@@ -19,15 +19,15 @@ var options = {
     client: {
         dependenciesPath: wwwRoot + 'client-dependencies/',
         ts: {
-            files: ['src/**/*.ts'],
+            files: 'src/**/*.ts',
             outputPath: wwwRoot + 'js/'
         },
         sass: {
-            files: ['src/assets/**/*.scss'],
+            files: 'src/assets/**/*.scss',
             outputPath: wwwRoot
         },
         html: {
-            files: ['src/*.html'],
+            files: 'src/*.html',
             outputPath: wwwRoot
         }
     },
@@ -36,8 +36,7 @@ var options = {
             host: 'localhost',
             port: 3000,
             notify: true,
-            open: true,
-			reloadDebounce: 3000
+            open: true
         }
     }
 };
@@ -119,7 +118,6 @@ gulp.task('browser-sync', function() {
         port: options.server.browser.port,
         notify: options.server.browser.notify,
         open: options.server.browser.open,
-		reloadDebounce: options.server.browser.reloadDebounce,
         server: {
             baseDir: wwwRoot,
             injectChanges: true
