@@ -9,7 +9,7 @@ export class MashapeService {
     }
     getAllCardBacks(){
         return this.http.get('https://omgvamp-hearthstone-v1.p.mashape.com/cardbacks', { headers: this.headers })
-            .map(res => res.json())
+            .map((res: Response) => res.json())
             .map((cardBacks: Array<any>) => {
                 let result:Array<CardBack> = [];
                 if (cardBacks) {
