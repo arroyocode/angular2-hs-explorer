@@ -19,7 +19,7 @@ var options = {
     client: {
         dependenciesPath: wwwRoot + 'client-dependencies/',
         ts: {
-            files: ['src/app/components/**/*.ts', 'src/app/shared/*.ts', 'src/app/*.ts'],
+            files: ['src/**/*.ts'],
             outputPath: wwwRoot + 'js/'
         },
         sass: {
@@ -36,7 +36,7 @@ var options = {
             host: 'localhost',
             port: 3000,
             notify: true,
-            open: false,
+            open: true,
 			reloadDebounce: 3000
         }
     }

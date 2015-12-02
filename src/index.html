@@ -10,17 +10,19 @@
 <app></app>
 <script src="client-dependencies/systemjs/dist/system.src.js"></script>
 <script>
-    System.config({
-        baseURL: '/',
-        defaultJSExtensions: true,
-        map: {
-            index: 'index'
-        }
-    });
-</script>
+        System.config({
+			baseUrl: '/',
+            defaultJSExtensions: true,
+			map: {
+				hse: 'js/bootstrap'
+			}
+        });
+    </script>
 <script src="client-dependencies/angular2/bundles/angular2.dev.js"></script>
 <script src="client-dependencies/angular2/bundles/router.dev.js"></script>
 <script src="client-dependencies/angular2/bundles/http.dev.js"></script>
-<script src="js/app.js"></script>
+<script>
+        System.import('hse').catch(console.log.bind(console));
+    </script>
 </body>
 </html>
