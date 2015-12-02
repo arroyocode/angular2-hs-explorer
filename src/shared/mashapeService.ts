@@ -4,11 +4,13 @@ import {CardBack} from './cardBack';
 
 @Injectable()
 export class MashapeService {
-    constructor (private http: Http, private headers: Headers){
-        headers.append('X-Mashape-Key', 'o99raO3GdemshLKCf8XPNKPoubfCp1XAVJYjsnSNAW5S0YuHpf');
+    constructor (private http: Http){
     }
-    getAllCardBacks(){
-        return this.http.get('https://omgvamp-hearthstone-v1.p.mashape.com/cardbacks', { headers: this.headers })
+    getAllCardBacks() {
+		var headers = new Headers();
+		headers.append('X-Mashape-Key', 'o99raO3GdemshLKCf8XPNKPoubfCp1XAVJYjsnSNAW5S0YuHpf');
+
+        return this.http.get('https://omgvamp-hearthstone-v1.p.mashape.com/cardbacks', { headers: headers })
             .map((res: Response) => res.json())
             .map((cardBacks: Array<any>) => {
                 let result:Array<CardBack> = [];
