@@ -27,7 +27,7 @@ var options = {
             outputPath: wwwRoot
         },
         html: {
-            files: ['src/*.html', 'src/assets/*.ico'],
+            files: ['src/*.html', 'src/assets/favicon.png'],
             outputPath: wwwRoot
         }
     },

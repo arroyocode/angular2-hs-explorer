@@ -1,6 +1,6 @@
 node_modules/
 src/**/*.js
-wwwroot/**/*.ico
+wwwroot/*.png
 wwwroot/**/*.js
 wwwroot/**/*.js.map
 wwwroot/**/*.css
