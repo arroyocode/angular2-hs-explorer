@@ -95,7 +95,7 @@ gulp.task('build-ts', function () {
         .pipe(clip())
         .pipe(sourcemaps.init())
         .pipe(tsc(project))
-		//.pipe(uglify())
+		.pipe(uglify())
         .pipe(gulp.dest(options.client.ts.outputPath));
 });
 
@@ -133,7 +133,7 @@ gulp.task('watch-ts', function() {
         .pipe(changed(options.client.ts.files, { extension: '.js' }))
         .pipe(clip())
         .pipe(tsc(project))
-		//.pipe(uglify())
+		.pipe(uglify())
         .pipe(gulp.dest(options.client.ts.outputPath))
         .pipe(reload({
             stream: true
