@@ -6,6 +6,15 @@ import {CardBack} from './cardBack';
 export class MashapeService {
     constructor (private http: Http){
     }
+
+	getAllCards() {
+
+	}
+
+	getSingleCard() {
+		
+	}
+
     getAllCardBacks() {
 		var headers = new Headers();
 		headers.append('X-Mashape-Key', 'o99raO3GdemshLKCf8XPNKPoubfCp1XAVJYjsnSNAW5S0YuHpf');
@@ -35,4 +44,16 @@ export class MashapeService {
                 return result;
             });
     }
+
+	getCardSearch() {
+
+	}
+
+	getCardSet() {
+
+	}
+
+	getCardsByClass() {
+
+	}
 }
