@@ -5,7 +5,7 @@
   "author": "Greg Arroyo",
   "license": "MIT",
   "dependencies": {
-    "angular2": "^2.0.0-alpha.47",
+    "angular2": "2.0.0-alpha.47",
     "systemjs": "^0.19.6"
   },
   "devDependencies": {
