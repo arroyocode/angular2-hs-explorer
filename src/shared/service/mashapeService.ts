@@ -20,41 +20,100 @@ export class MashapeService {
 	}
 
 	getCardBacks(locale?: string) {
-		var searchParams = new URLSearchParams();
-		searchParams.set('locale', locale);
-        return this._apiHttp.get('/cardbacks', searchParams)
+		var params = new URLSearchParams();
+		params.set('locale', locale);
+        return this._apiHttp.get('/cardbacks', params)
 			.map((res: Response) => res.json());
     }
 
 	getCardSearch(name: string, collectible?: number, locale?: string) {
-		// GET: /cards/search/{name}
+		var params = new URLSearchParams();
+		params.set('collectible', collectible.toString());
+		params.set('locale', locale);
+		return this._apiHttp.get('/cards/search/' + encodeURI(name), params)
+			.map((res: Response) => res.json());
 	}
 
 	getCardSet(set: string, attack?: number, collectible?: number, cost?: number, durability?: number, health?: number, locale?: string) {
-		// GET: /cards/sets/{set}
+		var params = new URLSearchParams();
+		params.set('attack', attack.toString());
+		params.set('collectible', collectible.toString());
+		params.set('cost', cost.toString());
+		params.set('durability', durability.toString());
+		params.set('health', health.toString());
+		params.set('locale', locale);
+		return this._apiHttp.get('/cards/sets/' + encodeURI(set), params)
+			.map((res: Response) => res.json());
 	}
 
 	getCardsByClass(heroClass: string, attack?: number, collectible?: number, cost?: number, durability?: number, health?: number, locale?: string) {
-		// GET /cards/classes/{heroClass}
+		var params = new URLSearchParams();
+		params.set('attack', attack.toString());
+		params.set('collectible', collectible.toString());
+		params.set('cost', cost.toString());
+		params.set('durability', durability.toString());
+		params.set('health', health.toString());
+		params.set('locale', locale);
+		return this._apiHttp.get('/cards/classes/' + encodeURI(heroClass), params)
+			.map((res: Response) => res.json());
 	}
 
 	getCardsByFaction(faction: string, attack?: number, collectible?: number, cost?: number, durability?: number, health?: number, locale?: string) {
 		// GET /cards/factions/{faction}
+		var params = new URLSearchParams();
+		params.set('attack', attack.toString());
+		params.set('collectible', collectible.toString());
+		params.set('cost', cost.toString());
+		params.set('durability', durability.toString());
+		params.set('health', health.toString());
+		params.set('locale', locale);
+		return this._apiHttp.get('/cards/factions/' + encodeURI(faction), params)
+			.map((res: Response) => res.json());
 	}
 
 	getCardsByQuality(quality: string, attack?: number, collectible?: number, cost?: number, durability?: number, health?: number, locale?: string) {
 		// GET /cards/qualities/{quality}
+		var params = new URLSearchParams();
+		params.set('attack', attack.toString());
+		params.set('collectible', collectible.toString());
+		params.set('cost', cost.toString());
+		params.set('durability', durability.toString());
+		params.set('health', health.toString());
+		params.set('locale', locale);
+		return this._apiHttp.get('/cards/qualities/' + encodeURI(quality), params)
+			.map((res: Response) => res.json());
 	}
 
 	getCardsByRace(race: string, attack?: number, collectible?: number, cost?: number, durability?: number, health?: number, locale?: string) {
-		// GET /cards/races/{race}
+		var params = new URLSearchParams();
+		params.set('attack', attack.toString());
+		params.set('collectible', collectible.toString());
+		params.set('cost', cost.toString());
+		params.set('durability', durability.toString());
+		params.set('health', health.toString());
+		params.set('locale', locale);
+		return this._apiHttp.get('/cards/races/' + encodeURI(race), params)
+			.map((res: Response) => res.json());
 	}
 
 	getCardsByType(type: string, attack?: number, collectible?: number, cost?: number, durability?: number, health?: number, locale?: string) {
-		// GET /cards/types/{type}
+		var params = new URLSearchParams();
+		params.set('attack', attack.toString());
+		params.set('collectible', collectible.toString());
+		params.set('cost', cost.toString());
+		params.set('durability', durability.toString());
+		params.set('health', health.toString());
+		params.set('locale', locale);
+		return this._apiHttp.get('/cards/types/' + encodeURI(type), params)
+			.map((res: Response) => res.json());
 	}
 
 	getSingleCard(name: string, collectible?: number, locale?: string) {
 		// GET /cards/{name}
+		var params = new URLSearchParams();
+		params.set('collectible', collectible.toString());
+		params.set('locale', locale);
+		return this._apiHttp.get('/cards/' + encodeURI(name), params)
+			.map((res: Response) => res.json());
 	}
 }
