@@ -1,4 +1,4 @@
-import {Component, CORE_DIRECTIVES, provide, bootstrap} from 'angular2/angular2';
+import {Component, CORE_DIRECTIVES} from 'angular2/angular2';
 import {HTTP_PROVIDERS} from 'angular2/http';
 import {CardBack} from './shared/cardBack';
 import {MashapeService} from './shared/mashapeService';
@@ -19,5 +19,3 @@ export class AppComponent {
             .subscribe(res => this.cardBacks = res);
     }
 }
-
-bootstrap(AppComponent, [HTTP_PROVIDERS, provide(MashapeService, { useClass: MashapeService })]);
