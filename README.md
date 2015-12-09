@@ -1,3 +1,3 @@
-https://market.mashape.com/arroyocode/applications/angular2-hs-explorer
+#Hearthstone Explorer
 
-Work in progress!
+A developing Angular 2 app for exploring Blizzard Entertainment's Hearthstone game.
