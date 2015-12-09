@@ -1,6 +1,5 @@
 import {Component, CORE_DIRECTIVES} from 'angular2/angular2';
 import {HTTP_PROVIDERS} from 'angular2/http';
-import {CardBack} from './shared/model/cardBack';
 import {MashapeService} from './shared/service/mashapeService';
 
 @Component({
@@ -14,7 +13,7 @@ import {MashapeService} from './shared/service/mashapeService';
     directives: [CORE_DIRECTIVES]
 })
 export class AppComponent {
-	cardBacks: CardBack[];
+	cardBacks: any;
     constructor(service: MashapeService){
         service.getCardBacks()
             .subscribe(res => this.cardBacks = res);
