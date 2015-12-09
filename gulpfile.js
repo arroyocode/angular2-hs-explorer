@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var clip = require('gulp-clip-empty-files');
+var clean = require('gulp-clean');
 var tsd = require('gulp-tsd');
 var del = require('del');
 var sync = require('browser-sync');
@@ -164,6 +165,7 @@ gulp.task('client-reload', function () {
 });
 
 gulp.task('build-setup', function () {
+	del.sync([wwwRoot + '**', '!' + wwwRoot]);
     seq('client-dependencies', ['build-wwwroot']);
 });
 
