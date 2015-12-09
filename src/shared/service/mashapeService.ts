@@ -1,5 +1,5 @@
 import {Injectable} from 'angular2/angular2';
-import {Http, Headers, Response} from 'angular2/http';
+import {Http, Headers, Response, URLSearchParams} from 'angular2/http';
 import {ApiHttp} from './apiHttp';
 import {CardBack} from '../model/cardBack';
 
@@ -9,15 +9,21 @@ export class MashapeService {
     }
 
 	getAllCards() {
-
+		// GET: /cards
+		//		attack: string
+		//		collectible: number
+		//		cost: number
+		//		durability: number
+		// 		health: number
+		//		locale: string
 	}
 
-	getSingleCard() {
+	getCardBacks(locale?: string) {
+		// GET:	/cardbacks
 
-	}
-
-    getAllCardBacks() {
-        return this._apiHttp.get('/cardbacks')
+		var searchParams = new URLSearchParams();
+		searchParams.set('locale', locale);
+        return this._apiHttp.get('/cardbacks', searchParams)
             .map((res: Response) => res.json())
             .map((cardBacks: Array<any>) => {
                 let result:Array<CardBack> = [];
@@ -43,15 +49,7 @@ export class MashapeService {
             });
     }
 
-	getCardSearch() {
-
-	}
-
-	getCardSet() {
-
-	}
-
-	getCardsByClass() {
-
+	getCardSearch(name: string, collectible?: number, local?: string) {
+		// GET: /cards/search/{name}
 	}
 }

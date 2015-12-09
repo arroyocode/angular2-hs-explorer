@@ -16,7 +16,7 @@ import {MashapeService} from './shared/service/mashapeService';
 export class AppComponent {
 	cardBacks: CardBack[];
     constructor(service: MashapeService){
-        service.getAllCardBacks()
+        service.getCardBacks()
             .subscribe(res => this.cardBacks = res);
     }
 }
