@@ -1,9 +1,9 @@
 node_modules/
 src/**/*.js
-wwwroot/*.png
-wwwroot/**/*.js
-wwwroot/**/*.js.map
-wwwroot/**/*.css
-wwwroot/*.html
-wwwroot/client-dependencies
+app/*.png
+app/**/*.js
+app/**/*.js.map
+app/**/*.css
+app/*.html
+app/client-dependencies
 .idea*

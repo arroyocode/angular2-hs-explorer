@@ -1,6 +1,5 @@
 var gulp = require('gulp');
 var clip = require('gulp-clip-empty-files');
-var clean = require('gulp-clean');
 var tsd = require('gulp-tsd');
 var del = require('del');
 var sync = require('browser-sync');
@@ -15,21 +14,21 @@ var getDirName = require('path').dirname;
 var syncRequest = require('sync-request');
 var tsc = require('gulp-typescript');
 
-var wwwRoot = 'wwwroot/';
+var appRoot = 'app/';
 var options = {
     client: {
-        dependenciesPath: wwwRoot + 'client-dependencies/',
+        dependenciesPath: appRoot + 'client-dependencies/',
         ts: {
             files: 'src/**/*.ts',
-            outputPath: wwwRoot + 'js/'
+            outputPath: appRoot + 'js/'
         },
         sass: {
             files: 'src/assets/**/*.scss',
-            outputPath: wwwRoot
+            outputPath: appRoot
         },
         html: {
             files: ['src/*.html', 'src/assets/favicon.png'],
-            outputPath: wwwRoot
+            outputPath: appRoot
         }
     },
     server: {
@@ -120,7 +119,7 @@ gulp.task('browser-sync', function() {
         notify: options.server.browser.notify,
         open: options.server.browser.open,
         server: {
-            baseDir: wwwRoot,
+            baseDir: appRoot,
             injectChanges: true
         }
     });
@@ -165,7 +164,7 @@ gulp.task('client-reload', function () {
 });
 
 gulp.task('build-setup', function () {
-	del.sync([wwwRoot + '**', '!' + wwwRoot]);
+	del.sync([appRoot + '**', '!' + appRoot]);
     seq('client-dependencies', ['build-wwwroot']);
 });
 
