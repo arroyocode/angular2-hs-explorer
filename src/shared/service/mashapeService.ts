@@ -59,7 +59,6 @@ export class MashapeService {
 	}
 
 	getCardsByFaction(faction: string, attack?: number, collectible?: number, cost?: number, durability?: number, health?: number, locale?: string) {
-		// GET /cards/factions/{faction}
 		var params = new URLSearchParams();
 		params.set('attack', attack.toString());
 		params.set('collectible', collectible.toString());
@@ -72,7 +71,6 @@ export class MashapeService {
 	}
 
 	getCardsByQuality(quality: string, attack?: number, collectible?: number, cost?: number, durability?: number, health?: number, locale?: string) {
-		// GET /cards/qualities/{quality}
 		var params = new URLSearchParams();
 		params.set('attack', attack.toString());
 		params.set('collectible', collectible.toString());
@@ -109,7 +107,6 @@ export class MashapeService {
 	}
 
 	getSingleCard(name: string, collectible?: number, locale?: string) {
-		// GET /cards/{name}
 		var params = new URLSearchParams();
 		params.set('collectible', collectible.toString());
 		params.set('locale', locale);

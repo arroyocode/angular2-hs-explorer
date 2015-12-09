@@ -20,10 +20,10 @@ var options = {
         dependenciesPath: appRoot + 'client-dependencies/',
         ts: {
             files: 'src/**/*.ts',
-            outputPath: appRoot + 'js/'
+            outputPath: appRoot
         },
         sass: {
-            files: 'src/assets/**/*.scss',
+            files: 'src/**/*.scss',
             outputPath: appRoot
         },
         html: {
