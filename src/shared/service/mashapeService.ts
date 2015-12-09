@@ -1,10 +1,11 @@
 import {Injectable} from 'angular2/angular2';
 import {Http, Headers, Response} from 'angular2/http';
-import {CardBack} from './cardBack';
+import {ApiHttp} from './apiHttp';
+import {CardBack} from '../model/cardBack';
 
 @Injectable()
 export class MashapeService {
-    constructor (private http: Http){
+    constructor (private _apiHttp: ApiHttp){
     }
 
 	getAllCards() {
@@ -12,14 +13,11 @@ export class MashapeService {
 	}
 
 	getSingleCard() {
-		
+
 	}
 
     getAllCardBacks() {
-		var headers = new Headers();
-		headers.append('X-Mashape-Key', 'o99raO3GdemshLKCf8XPNKPoubfCp1XAVJYjsnSNAW5S0YuHpf');
-
-        return this.http.get('https://omgvamp-hearthstone-v1.p.mashape.com/cardbacks', { headers: headers })
+        return this._apiHttp.get('/cardbacks')
             .map((res: Response) => res.json())
             .map((cardBacks: Array<any>) => {
                 let result:Array<CardBack> = [];
