@@ -1,21 +1,12 @@
-import {Component, CORE_DIRECTIVES} from 'angular2/angular2';
-import {HTTP_PROVIDERS} from 'angular2/http';
-import {MashapeService} from './shared/service/mashapeService';
+import {Component} from 'angular2/angular2';
+import {CardBackListComponent} from './components/cardback_list/cardback_list.component';
 
 @Component({
     selector: 'app',
-	providers: [MashapeService],
-    template: `
-        <ul>
-            <li *ng-for="#cardBack of cardBacks"><img src="{{cardBack.img}}" width="100" />{{ cardBack.name }} - {{ cardBack.description }}</li>
-        </ul>
-    `,
-    directives: [CORE_DIRECTIVES]
+	directives: [CardBackListComponent],
+	template: `
+		<cardback_list>
+	`
 })
 export class AppComponent {
-	cardBacks: any;
-    constructor(service: MashapeService){
-        service.getCardBacks()
-            .subscribe(res => this.cardBacks = res);
-    }
 }

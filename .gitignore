@@ -1,9 +1,4 @@
 node_modules/
 src/**/*.js
-app/*.png
-app/**/*.js
-app/**/*.js.map
-app/**/*.css
-app/*.html
-app/client-dependencies
+app/
 .idea*

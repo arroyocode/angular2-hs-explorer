@@ -27,7 +27,7 @@ var options = {
             outputPath: appRoot
         },
         html: {
-            files: ['src/*.html', 'src/assets/favicon.png'],
+            files: ['src/**/*.html', 'src/assets/favicon.png'],
             outputPath: appRoot
         }
     },
