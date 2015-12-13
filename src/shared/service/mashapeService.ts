@@ -2,6 +2,22 @@ import {Injectable} from 'angular2/angular2';
 import {Http, Headers, Response, URLSearchParams} from 'angular2/http';
 import {ApiHttp} from './apiHttp';
 
+interface IApi {
+	name: string,
+	set: string,
+	heroClass: string,
+	faction: string,
+	quality: string,
+	race: string,
+	type: string,
+	attack?: number,
+	collectible?: number,
+	cost?: number,
+	durability?: number,
+	health?: number,
+	locale?: string
+}
+
 @Injectable()
 export class MashapeService {
     constructor(private _apiHttp: ApiHttp) {
