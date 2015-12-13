@@ -1,6 +1,5 @@
 
 <div *ng-for="#cardBack of cardBacks">
-	<img [src]="cardBack.img" width="100" />
+	<img src="{{ cardBack.img }}" width="100" />
 	<p>{{ cardBack.name }}</p>
-	<p [innerHtml]="cardback.description"</p>
 </div>
