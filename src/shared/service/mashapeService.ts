@@ -1,4 +1,4 @@
-import {Injectable} from 'angular2/angular2';
+import {Injectable} from 'angular2/core';
 import {Http, Headers, Response, URLSearchParams} from 'angular2/http';
 import {ApiHttp} from './apiHttp';
 

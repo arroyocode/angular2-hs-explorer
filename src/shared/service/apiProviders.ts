@@ -1,4 +1,4 @@
-import {Provider} from 'angular2/angular2';
+import {Provider} from 'angular2/core';
 import {CONST_EXPR} from 'angular2/src/facade/lang';
 import {ApiHttp, ApiConnectionBackend} from './apiHttp';
 

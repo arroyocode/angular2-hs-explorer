@@ -1,4 +1,4 @@
-import {Injectable, Injector, Inject} from 'angular2/angular2';
+import {Injectable, Injector, Inject} from 'angular2/core';
 import {Http, Request, RequestOptions, ResponseOptions, ConnectionBackend, XHRConnection, BrowserXhr} from 'angular2/http';
 
 @Injectable()

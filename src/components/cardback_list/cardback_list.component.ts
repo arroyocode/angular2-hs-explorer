@@ -1,4 +1,5 @@
-import {Component, CORE_DIRECTIVES} from 'angular2/angular2';
+import {Component} from 'angular2/core';
+import {CORE_DIRECTIVES} from 'angular2/common';
 import {HTTP_PROVIDERS} from 'angular2/http';
 import {MashapeService} from '../../shared/service/mashapeService';
 
