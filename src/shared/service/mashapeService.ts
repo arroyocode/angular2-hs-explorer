@@ -23,63 +23,53 @@ export class MashapeService {
     constructor(private _apiHttp: ApiHttp) {
     }
 
-	getAllCards(attack?: number, collectible?: number, cost?: number, durability?: number, health?: number, locale?: string) {
-		var config:IApiConfig = { attack: attack, collectible: collectible, cost: cost, durability: durability, health: health, locale: locale }
+	getAllCards(config: IApiConfig) {
 		return this._apiHttp.get('/cards', buildApiQueryParams(config))
 			.map((res: Response) => res.json());
 	}
 
-	getCardBacks(locale?: string) {
-		var config: IApiConfig = { locale: locale }
+	getCardBacks(config: IApiConfig) {
         return this._apiHttp.get('/cardbacks', buildApiQueryParams(config))
 			.map((res: Response) => res.json());
     }
 
-	getCardSearch(name: string, collectible?: number, locale?: string) {
-		var config: IApiConfig = { collectible: collectible, locale: locale }
-		return this._apiHttp.get('/cards/search/' + encodeURI(name), buildApiQueryParams(config))
+	getCardSearch(config: IApiConfig) {
+		return this._apiHttp.get('/cards/search/' + encodeURI(config.name), buildApiQueryParams(config))
 			.map((res: Response) => res.json());
 	}
 
-	getCardSet(set: string, attack?: number, collectible?: number, cost?: number, durability?: number, health?: number, locale?: string) {
-		var config: IApiConfig = { attack: attack, collectible: collectible, cost: cost, durability: durability, health: health, locale: locale }
-		return this._apiHttp.get('/cards/sets/' + encodeURI(set), buildApiQueryParams(config))
+	getCardSet(config: IApiConfig) {
+		return this._apiHttp.get('/cards/sets/' + encodeURI(config.set), buildApiQueryParams(config))
 			.map((res: Response) => res.json());
 	}
 
-	getCardsByClass(heroClass: string, attack?: number, collectible?: number, cost?: number, durability?: number, health?: number, locale?: string) {
-		var config: IApiConfig = { attack: attack, collectible: collectible, cost: cost, durability: durability, health: health, locale: locale }
-		return this._apiHttp.get('/cards/classes/' + encodeURI(heroClass), buildApiQueryParams(config))
+	getCardsByClass(config: IApiConfig) {
+		return this._apiHttp.get('/cards/classes/' + encodeURI(config.heroClass), buildApiQueryParams(config))
 			.map((res: Response) => res.json());
 	}
 
-	getCardsByFaction(faction: string, attack?: number, collectible?: number, cost?: number, durability?: number, health?: number, locale?: string) {
-		var config: IApiConfig = { attack: attack, collectible: collectible, cost: cost, durability: durability, health: health, locale: locale }
-		return this._apiHttp.get('/cards/factions/' + encodeURI(faction), buildApiQueryParams(config))
+	getCardsByFaction(config: IApiConfig) {
+		return this._apiHttp.get('/cards/factions/' + encodeURI(config.faction), buildApiQueryParams(config))
 			.map((res: Response) => res.json());
 	}
 
-	getCardsByQuality(quality: string, attack?: number, collectible?: number, cost?: number, durability?: number, health?: number, locale?: string) {
-		var config: IApiConfig = { attack: attack, collectible: collectible, cost: cost, durability: durability, health: health, locale: locale }
-		return this._apiHttp.get('/cards/qualities/' + encodeURI(quality), buildApiQueryParams(config))
+	getCardsByQuality(config: IApiConfig) {
+		return this._apiHttp.get('/cards/qualities/' + encodeURI(config.quality), buildApiQueryParams(config))
 			.map((res: Response) => res.json());
 	}
 
-	getCardsByRace(race: string, attack?: number, collectible?: number, cost?: number, durability?: number, health?: number, locale?: string) {
-		var config: IApiConfig = { attack: attack, collectible: collectible, cost: cost, durability: durability, health: health, locale: locale }
-		return this._apiHttp.get('/cards/races/' + encodeURI(race), buildApiQueryParams(config))
+	getCardsByRace(config: IApiConfig) {
+		return this._apiHttp.get('/cards/races/' + encodeURI(config.race), buildApiQueryParams(config))
 			.map((res: Response) => res.json());
 	}
 
-	getCardsByType(type: string, attack?: number, collectible?: number, cost?: number, durability?: number, health?: number, locale?: string) {
-		var config: IApiConfig = { attack: attack, collectible: collectible, cost: cost, durability: durability, health: health, locale: locale }
-		return this._apiHttp.get('/cards/types/' + encodeURI(type), buildApiQueryParams(config))
+	getCardsByType(config: IApiConfig) {
+		return this._apiHttp.get('/cards/types/' + encodeURI(config.type), buildApiQueryParams(config))
 			.map((res: Response) => res.json());
 	}
 
-	getSingleCard(name: string, collectible?: number, locale?: string) {
-		var config: IApiConfig = { collectible: collectible, locale: locale }
-		return this._apiHttp.get('/cards/' + encodeURI(name), buildApiQueryParams(config))
+	getSingleCard(config: IApiConfig) {
+		return this._apiHttp.get('/cards/' + encodeURI(config.name), buildApiQueryParams(config))
 			.map((res: Response) => res.json());
 	}
 }
