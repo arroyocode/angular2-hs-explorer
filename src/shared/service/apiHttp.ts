@@ -13,8 +13,7 @@ export class ApiConnectionBackend extends ConnectionBackend {
 	createConnection(request: Request): XHRConnection {
 		request.headers.set('X-Mashape-Key', 'o99raO3GdemshLKCf8XPNKPoubfCp1XAVJYjsnSNAW5S0YuHpf');
 		request.url = this._baseHref + request.url;
-		var connection = new XHRConnection(request, this._browserXhr, this._baseResponseOptions);
-		return connection;
+		return new XHRConnection(request, this._browserXhr, this._baseResponseOptions);
 	}
 }
 

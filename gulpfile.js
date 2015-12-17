@@ -84,7 +84,6 @@ gulp.task('client-dependencies', function () {
 
     gulp.src(remoteSources, { base: clientDependencies.remoteDependenciesRootPath })
         .pipe(gulp.dest(dest));
-
 });
 
 gulp.task('build-ts', function () {
