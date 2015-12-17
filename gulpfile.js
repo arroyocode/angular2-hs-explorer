@@ -163,7 +163,7 @@ gulp.task('client-reload', function () {
 });
 
 gulp.task('build-setup', function () {
-	del.sync([appRoot + '**', '!' + appRoot]);
+	//del.sync([appRoot + '**', '!' + appRoot]);
     seq('client-dependencies', ['build-wwwroot']);
 });
 

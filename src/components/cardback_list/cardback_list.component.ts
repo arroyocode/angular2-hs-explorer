@@ -7,8 +7,9 @@ import {IApiConfig, MashapeService} from '../../shared/service/mashapeService';
     selector: 'cardback_list',
 	providers: [MashapeService],
 	directives: [CORE_DIRECTIVES],
-    templateUrl: './components/cardback_list/cardback_list.component.html',
-	styleUrls: ['./components/cardback_list/cardback_list.component.css']
+    templateUrl: 'cardback_list.component.html',
+	styleUrls: ['cardback_list.component.css'],
+	moduleId: module.id
 })
 export class CardBackListComponent {
 	cardBacks: any;

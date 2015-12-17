@@ -7,7 +7,9 @@ import {CardBackListComponent} from './components/cardback_list/cardback_list.co
 	directives: [CardBackListComponent],
 	template: `
 		<cardback_list>
-	`
+	`,
+	styleUrls: ['app.component.css'],
+  	moduleId: module.id
 })
 export class AppComponent {
 }
