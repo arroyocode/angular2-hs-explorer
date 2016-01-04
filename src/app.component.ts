@@ -1,6 +1,6 @@
 import {Component} from 'angular2/core';
 import {CardBackListComponent} from './components/cardback_list/cardback_list.component';
-import 'rxjs/operator/map';
+import 'rxjs/add/operator/map';
 
 @Component({
     selector: 'app',
