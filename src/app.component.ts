@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
     selector: 'app',
 	directives: [CardBackListComponent],
 	template: `
-		<cardback_list>
+		<cardback_list></cardback_list>
 	`,
 	styleUrls: ['app.component.css'],
   	moduleId: module.id
