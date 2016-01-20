@@ -54,7 +54,6 @@ var clientDependencies = require('./clientdependencies.json');
 gulp.task('client-dependencies', function () {
     var dest = options.client.dependenciesPath;
     del.sync([dest]);
-
     var moduleSources = [];
     var modulesRootPath = './' + clientDependencies.modulesRootPath + '/';
     clientDependencies.dependencies.forEach(function (dependency) {
@@ -62,27 +61,6 @@ gulp.task('client-dependencies', function () {
     });
 
     gulp.src(moduleSources, { base: clientDependencies.modulesRootPath })
-        .pipe(gulp.dest(dest));
-
-    var remoteSources = [];
-    var remoteDependenciesRootPath = './' + clientDependencies.remoteDependenciesRootPath + '/';
-    clientDependencies.remoteDependencies.forEach(function (dependencyUrl) {
-        var path = dependencyUrl.slice(dependencyUrl.indexOf('://') + 3);
-        var fullPath = remoteDependenciesRootPath + path;
-        remoteSources.push(fullPath);
-
-        if (!fs.existsSync(fullPath)) {
-            mkdirp.sync(getDirName(fullPath), [], function (error) {
-                if (error) {
-                    throw error;
-                }
-            });
-            var data = syncRequest('GET', dependencyUrl)
-            fs.writeFileSync(fullPath, data.getBody());
-        }
-    });
-
-    gulp.src(remoteSources, { base: clientDependencies.remoteDependenciesRootPath })
         .pipe(gulp.dest(dest));
 });
 

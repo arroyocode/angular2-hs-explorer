@@ -7,7 +7,5 @@
     "angular2/bundles/router.dev.js",
     "angular2/bundles/http.dev.js",
 	"rxjs/**/*.js"
-  ],
-  "remoteDependenciesRootPath": "remote_dependencies",
-  "remoteDependencies": [ ]
+  ]
 }
